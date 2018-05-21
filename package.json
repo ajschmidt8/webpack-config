@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":
-      "webpack-dev-server --config webpack.config.babel.js --mode development",
-    "build":
-      "rimraf dist && webpack --mode production --config webpack.config.babel.js"
+    "dev": "webpack-dev-server --config webpack.config.babel.js --mode development",
+    "build": "rimraf dist && webpack --mode production --config webpack.config.babel.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",

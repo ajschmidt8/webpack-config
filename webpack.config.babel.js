@@ -17,7 +17,6 @@ module.exports = (env, argv) => {
     },
     devServer: {
       contentBase: "src",
-      port: 9000,
       hot: true
     },
     module: {
@@ -40,7 +39,11 @@ module.exports = (env, argv) => {
             ]
           })
         },
-        { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "babel-loader"
+        },
         {
           test: /\.exec\.js$/,
           use: ["script-loader"]
@@ -62,12 +65,12 @@ module.exports = (env, argv) => {
             }
           ]
         },
-        { test: /\.html$/, loader: "html-loader" }
+        { test: /\.pug$/, loader: "pug-loader" }
       ]
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "index.html",
+        template: "index.pug",
         minify: {
           removeComments: true,
           collapseWhitespace: true
